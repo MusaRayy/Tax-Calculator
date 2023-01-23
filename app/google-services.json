@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "156551417778",
+    "firebase_url": "https://onesightview-d80ac.firebaseio.com",
+    "project_id": "onesightview-d80ac",
+    "storage_bucket": "onesightview-d80ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156551417778:android:6c07a85827cc82d0051eab",
+        "android_client_info": {
+          "package_name": "com.musarayy.taxcalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156551417778-4qame10kdg46u8mg3385ue75ulim71u9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.musarayy.taxcalculator",
+            "certificate_hash": "1dbcf8ca2dc6cd739257a2925df942df68fd643c"
+          }
+        },
+        {
+          "client_id": "156551417778-s604a8bv1s6bcgbluncsvlm5fe1791em.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4tIXYZ5RMUDNzIMwkp90S1F91J-kM0Eo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156551417778-s604a8bv1s6bcgbluncsvlm5fe1791em.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156551417778:android:90016990ebdd3ca6051eab",
+        "android_client_info": {
+          "package_name": "com.musarayy.taxcalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156551417778-s604a8bv1s6bcgbluncsvlm5fe1791em.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4tIXYZ5RMUDNzIMwkp90S1F91J-kM0Eo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156551417778-s604a8bv1s6bcgbluncsvlm5fe1791em.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:padding="@dimen/_16dp"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/taxFySpinner"
+            android:layout_width="@dimen/_200dp"
+            android:layout_height="@dimen/_40dp"
+            android:entries="@array/tax_fy_year"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:id="@+id/ageSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40dp"
+            android:entries="@array/age_range"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/grossSalaryTIL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/enter_your_gross_salary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/grossSalaryTIE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/calculateBtn"
+            style="@style/AppTheme.PrimaryButton"
+            android:layout_margin="@dimen/_10dp"
+            android:text="@string/calculate" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/taxModeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30dp"
+        android:checked="true"
+        android:layoutDirection="rtl"
+        android:text="@string/traditional_tax_info" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:background="@color/colorFiservBlue"
+        android:padding="@dimen/_10sp">
+
+        <TextView
+            style="@style/RobotoTextViewStyleItalic"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/income_slab"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_16sp" />
+
+        <TextView
+            style="@style/RobotoTextViewStyleItalic"
+            android:text="@string/rate_of_tax"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/taxSlabLayoutInflator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect_transprent"
+        android:orientation="vertical"
+        tools:ignore="UselessLeaf" />
+
+</LinearLayout>

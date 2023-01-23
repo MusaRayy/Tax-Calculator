@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.musarayy.taxcalculator.ui.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_home_to_taxCalculator"
+            app:destination="@id/taxCalculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taxCalculatorFragment"
+        android:name="com.musarayy.taxcalculator.ui.taxCalculation.TaxCalculatorFragment"
+        android:label="TaxCalculator" />
+</navigation>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:padding="@dimen/_16dp"
+    tools:context=".ui.taxCalculation.TaxCalculatorFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorFiservBlue"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10dp">
+
+        <TextView
+            style="@style/RobotoTextViewStyle"
+            android:text="@string/gross_ctc"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/ctcTxt"
+            style="@style/RobotoTextViewStyleBoldItalic"
+            android:paddingStart="@dimen/_5dp"
+            android:textColor="@color/colorWhite"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            style="@style/RobotoTextViewStyle"
+            android:paddingStart="@dimen/_5dp"
+            android:text="@string/monthly_salary_split_up"
+            android:textColor="@color/colorWhite" />
+
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect_transprent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/_8sp">
+
+            <TextView
+                android:id="@+id/basicPayTxt"
+                style="@style/RobotoTextViewStyleBold"
+                android:text="33,333" />
+
+            <TextView
+                style="@style/RobotoTextViewStyle"
+                android:layout_marginStart="@dimen/_16dp"
+                android:text="@string/basic_pay_is_40" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_1dp"
+            android:background="@color/colorHalfWhite"
+            android:gravity="center"
+            android:padding="@dimen/_8sp">
+
+            <TextView
+                android:id="@+id/hraTxt"
+                style="@style/RobotoTextViewStyleBold"
+                android:text="16,667" />
+
+            <TextView
+                style="@style/RobotoTextViewStyle"
+                android:layout_marginStart="@dimen/_16dp"
+                android:text="@string/hra_is_20" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/_8sp">
+
+            <TextView
+                android:id="@+id/splAllowTxt"
+                style="@style/RobotoTextViewStyleBold"
+                android:text="33,333" />
+
+            <TextView
+                style="@style/RobotoTextViewStyle"
+                android:layout_marginStart="@dimen/_16dp"
+                android:text="@string/special_allowances_is_40" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorFiservBlue"
+            android:gravity="center"
+            android:padding="@dimen/_10dp">
+
+            <TextView
+                android:id="@+id/totalMonthlyPayTxt"
+                style="@style/RobotoTextViewStyleBoldItalic"
+                android:text="33,333"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                style="@style/RobotoTextViewStyle"
+                android:layout_marginStart="@dimen/_16dp"
+                android:text="@string/total_montly_salary"
+                android:textColor="@color/colorWhite" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGrey"
+            android:gravity="center"
+            android:padding="@dimen/_10dp">
+
+            <TextView
+                android:id="@+id/pfTxt"
+                style="@style/RobotoTextViewStyleBold"
+                android:text="33,333" />
+
+            <TextView
+                style="@style/RobotoTextViewStyle"
+                android:layout_marginStart="@dimen/_16dp"
+                android:text="@string/pf_is_12" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1dp"
+            android:background="@color/colorFiservBlue" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGrey"
+            android:gravity="center"
+            android:padding="@dimen/_10dp">
+
+            <TextView
+                android:id="@+id/profTaxTxt"
+                style="@style/RobotoTextViewStyleBold"
+                android:text="208" />
+
+            <TextView
+                style="@style/RobotoTextViewStyle"
+                android:layout_marginStart="@dimen/_16dp"
+                android:text="@string/professional_tax" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorFiservBlue"
+            android:gravity="center"
+            android:padding="@dimen/_10dp">
+
+            <TextView
+                android:id="@+id/takeHomeTxt"
+                style="@style/RobotoTextViewStyleBoldItalic"
+                android:text="33,333"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                style="@style/RobotoTextViewStyle"
+                android:layout_marginStart="@dimen/_16dp"
+                android:text="@string/take_home_pay"
+                android:textColor="@color/colorWhite" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/taxableYeaarIncomeTxt"
+        style="@style/RobotoTextViewStyle"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/now_your_yearly_tax_able_income_is_s" />
+
+</LinearLayout>

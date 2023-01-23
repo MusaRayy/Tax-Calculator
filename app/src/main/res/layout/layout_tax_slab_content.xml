@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="1dp"
+    android:orientation="horizontal"
+    android:padding="@dimen/_10sp">
+
+    <TextView
+        android:id="@+id/incomeSlabTxt"
+        style="@style/RobotoTextViewStyle"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:text="sdfadfas"
+        android:textSize="@dimen/_16sp" />
+
+    <TextView
+        android:id="@+id/rateOfTaxTxt"
+        style="@style/RobotoTextViewStyleItalic"
+        android:textColor="@color/colorFiservOrange"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
