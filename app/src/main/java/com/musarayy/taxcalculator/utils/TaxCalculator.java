@@ -57,7 +57,7 @@ public class TaxCalculator {
 		} else if (taxableIncome >= 500001 && taxableIncome <= 1000000) {
 			return 12500 + ((taxableIncome - 500000) * 0.2);
 		} else if (taxableIncome >= 1000001) {
-			return 112500 + (taxableIncome - 1000000 * 0.3);
+			return 112500 + ((taxableIncome - 1000000) * 0.3);
 		} else {
 			return 0;
 		}
