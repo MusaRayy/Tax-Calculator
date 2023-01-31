@@ -1,7 +1,9 @@
 public class TaxCalculator {
 
 	public static void main(String[] args) {
-		new TaxCalculator().calculateTax(<Your Gross Pay (CTC)>);
+
+		new TaxCalculator().calculateTax(1380744);
+
 	}
 
 	private void printLine() {
@@ -19,6 +21,11 @@ public class TaxCalculator {
 
 		System.out.println(ctc + " \t = Your CTC");
 		System.out.println(monthlypay + " \t = Monthly pay");
+		printLine();
+		System.out.println((monthlypay *0.4) + "\t = Basic Pay (40%) per");
+		System.out.println((monthlypay *0.2) + "\t = HRA (20%)");
+		System.out.println((monthlypay *0.4) + "\t = Special Allowence (40%)");
+		printLine();
 		System.out.println(pf + "\t = PF");
 		printLine();
 		System.out.println(takeHomeTaxOut + "\t = Take Home (without tax)");
@@ -57,7 +64,7 @@ public class TaxCalculator {
 		} else if (taxableIncome >= 500001 && taxableIncome <= 1000000) {
 			return 12500 + ((taxableIncome - 500000) * 0.2);
 		} else if (taxableIncome >= 1000001) {
-			return 112500 + ((taxableIncome - 1000000) * 0.3);
+			return 112500 + (taxableIncome - 1000000 * 0.3);
 		} else {
 			return 0;
 		}
