@@ -2,7 +2,7 @@ public class TaxCalculator {
 
 	public static void main(String[] args) {
 
-		new TaxCalculator().calculateTax(1380744);
+		new TaxCalculator().calculateTax(<Your CTC>);
 
 	}
 
