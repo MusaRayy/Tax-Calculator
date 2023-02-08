@@ -1,23 +1,14 @@
 package com.musarayy.taxcalculator.utils
 
-import android.app.Activity
 import android.content.Context
 import android.content.DialogInterface
-import android.graphics.Color
-import android.net.Uri
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -151,35 +142,72 @@ fun Long.getTaxSlabPercentage(isOldTaxYear: Boolean): String {
     return ""
 }
 
-fun Boolean.getTaxRegime(ageRang: Int): HashMap<String, String> {
+fun Boolean.getTaxRegime(ageRang: Int, taxFyYear: Int): HashMap<String, String> {
     val map = HashMap<String, String>()
     val newTaxRegime = this
-    if (newTaxRegime) {
-        map["0 - 2.5 Lakh"] = "0 %"
-        map["2.5 Lakh - 5 Lakh"] = "5 %"
-        map["5 Lakh - 7.5 Lakh"] = "10 %"
-        map["7.5 Lakh & 10 Lakh"] = "15 %"
-        map["10 Lakh - 12.5 Lakh"] = "20 %"
-        map["12.5 Lakh - 15 Lakh"] = "25 %"
-        map["15 Lakh & above"] = "30 %"
-    } else {
-        when (ageRang) {
-            0 -> {
-                map["0 - 2.5 Lakh"] = "0 %"
-                map["2.5 Lakh - 5 Lakh"] = "5 %"
-                map["5 Lakh - 10 Lakh"] = "20 %"
-                map["10 Lakh & above"] = "30 %"
+
+    if (taxFyYear == 0) {
+        // Tax Year 2022 - 2023
+        if (newTaxRegime) {
+            map["0 - 2.5 Lakh"] = "0 %"
+            map["2.5 Lakh - 5 Lakh"] = "5 %"
+            map["5 Lakh - 7.5 Lakh"] = "10 %"
+            map["7.5 Lakh & 10 Lakh"] = "15 %"
+            map["10 Lakh - 12.5 Lakh"] = "20 %"
+            map["12.5 Lakh - 15 Lakh"] = "25 %"
+            map["15 Lakh & above"] = "30 %"
+        } else {
+            when (ageRang) {
+                0 -> {
+                    map["0 - 2.5 Lakh"] = "0 %"
+                    map["2.5 Lakh - 5 Lakh"] = "5 %"
+                    map["5 Lakh - 10 Lakh"] = "20 %"
+                    map["10 Lakh & above"] = "30 %"
+                }
+                1 -> {
+                    map["0 - 3 Lakh"] = "0 %"
+                    map["3 Lakh - 5 Lakh"] = "5 %"
+                    map["5 Lakh - 10 Lakh"] = "20 %"
+                    map["10 Lakh & above"] = "30 %"
+                }
+                2 -> {
+                    map["0 - 5 Lakh"] = "0 %"
+                    map["5 Lakh - 10 Lakh"] = "20 %"
+                    map["10 Lakh & above"] = "30 %"
+                }
             }
-            1 -> {
-                map["0 - 3 Lakh"] = "0 %"
-                map["3 Lakh - 5 Lakh"] = "5 %"
-                map["5 Lakh - 10 Lakh"] = "20 %"
-                map["10 Lakh & above"] = "30 %"
-            }
-            2 -> {
-                map["0 - 5 Lakh"] = "0 %"
-                map["5 Lakh - 10 Lakh"] = "20 %"
-                map["10 Lakh & above"] = "30 %"
+        }
+    } else if (taxFyYear == 1) {
+        // Tax Year 2023 - 2024
+        if (newTaxRegime) {
+            map["0 - 3 Lakh"] = "0 %"
+            map["3 Lakh - 6 Lakh"] = "5 %"
+            map["6 Lakh - 9 Lakh"] = "10 %"
+            map["9 Lakh & 12 Lakh"] = "15 %"
+            map["12 Lakh - 15 Lakh"] = "20 %"
+            map["15 Lakh & above"] = "30 %"
+            map["*till 7Lakh No tax by \"rebate\""] = "If your salary is 7L tax will applicable"
+        } else {
+            when (ageRang) {
+                0 -> {
+                    map["0 - 3 Lakh"] = "0 %"
+                    map["3 Lakh - 6 Lakh"] = "5 %"
+                    map["6 Lakh - 9 Lakh"] = "10 %"
+                    map["9 Lakh & 12 Lakh"] = "15 %"
+                    map["12 Lakh - 15 Lakh"] = "20 %"
+                    map["15 Lakh & above"] = "30 %"
+                }
+                1 -> {
+                    map["0 - 3 Lakh"] = "0 %"
+                    map["3 Lakh - 5 Lakh"] = "5 %"
+                    map["5 Lakh - 10 Lakh"] = "20 %"
+                    map["10 Lakh & above"] = "30 %"
+                }
+                2 -> {
+                    map["0 - 5 Lakh"] = "0 %"
+                    map["5 Lakh - 10 Lakh"] = "20 %"
+                    map["10 Lakh & above"] = "30 %"
+                }
             }
         }
     }

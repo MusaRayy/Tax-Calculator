@@ -24,7 +24,7 @@
     <string name="income_slab">Income Slab</string>
     <string-array name="tax_fy_year">
         <item>FY 2022 – 2023</item>
-<!--        <item>FY 2023 – 2024</item>-->
+        <item>FY 2023 – 2024</item>
     </string-array>
 
     <string-array name="age_range">
@@ -47,4 +47,5 @@
     <string name="take_home_pay">Your Take Home Salary</string>
     <string name="professional_tax">=&#160;&#160;&#160;&#160; Professional Tax</string>
     <string name="now_your_yearly_tax_able_income_is_s">Now Your yearly Tax able income is %s which comes under %s Tax Slab</string>
+    <string name="favorite">Favorite</string>
 </resources>

@@ -18,7 +18,7 @@ import com.musarayy.taxcalculator.utils.getTaxRegime
 import com.musarayy.taxcalculator.utils.hideKeyboard
 import com.musarayy.taxcalculator.utils.isValidAmount
 
-class HomeFragment : BaseFragment() {
+class HomeFragment : BaseFragment(), AdapterView.OnItemSelectedListener {
 
     private lateinit var ageSpinner: Spinner
     private lateinit var calculateBtn: TextView
@@ -63,15 +63,9 @@ class HomeFragment : BaseFragment() {
             }
         }
 
-        ageSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                loadTaxRegimeDetails()
-                p1?.hideKeyboard(requireContext())
-            }
+        taxFySpinner.onItemSelectedListener = this
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-            }
-        }
+        ageSpinner.onItemSelectedListener = this
 
         taxModeTxt.setOnCheckedChangeListener { compoundButton, b ->
             compoundButton?.hideKeyboard(requireContext())
@@ -106,9 +100,10 @@ class HomeFragment : BaseFragment() {
     private fun loadTaxRegimeDetails() {
         val newTaxRegime = taxModeTxt.text.contains("New", true)
         val ageRang = ageSpinner.selectedItemPosition
+        val taxFyYear = taxFySpinner.selectedItemPosition
 
         taxSlabLayout.removeAllViewsInLayout()
-        loadTaxSlabView(newTaxRegime.getTaxRegime(ageRang))
+        loadTaxSlabView(newTaxRegime.getTaxRegime(ageRang, taxFyYear))
     }
 
     private fun loadTaxSlabView(map: HashMap<String, String>) {
@@ -128,5 +123,14 @@ class HomeFragment : BaseFragment() {
 
             taxSlabLayout.addView(child)
         }
+    }
+
+    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        loadTaxRegimeDetails()
+        p1?.hideKeyboard(requireContext())
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+
     }
 }
